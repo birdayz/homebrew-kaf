@@ -5,20 +5,20 @@
 class Kaf < Formula
   desc ""
   homepage ""
-  version "0.1.53"
+  version "0.1.54"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/birdayz/kaf/releases/download/v0.1.53/kaf_0.1.53_Darwin_arm64.tar.gz"
-      sha256 "80e22d5673e2fd5019476782558ca4fe09d4ae122e55aaef372d90ddd3553872"
+      url "https://github.com/birdayz/kaf/releases/download/v0.1.54/kaf_0.1.54_Darwin_arm64.tar.gz"
+      sha256 "c6f2c4602fa85cde513698585e17c750dba77948079470e4c64f3e22cdc5554b"
 
       def install
         bin.install "kaf"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/birdayz/kaf/releases/download/v0.1.53/kaf_0.1.53_Darwin_x86_64.tar.gz"
-      sha256 "d08bc5748df3c11af2a47c3a7b2fd893dedb9cdfda847e3ffc2de74ba83170d0"
+      url "https://github.com/birdayz/kaf/releases/download/v0.1.54/kaf_0.1.54_Darwin_x86_64.tar.gz"
+      sha256 "9bb2f51a674168489630cc886b628c1cc5ca985c5635a7f6b4f150b35dabd426"
 
       def install
         bin.install "kaf"
@@ -28,16 +28,16 @@ class Kaf < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/birdayz/kaf/releases/download/v0.1.53/kaf_0.1.53_Linux_arm64.tar.gz"
-      sha256 "46555ac8dde2ee39eed024b2d744f22c0b1b75c36631e3c6cf67cd911fdcd0c4"
+      url "https://github.com/birdayz/kaf/releases/download/v0.1.54/kaf_0.1.54_Linux_arm64.tar.gz"
+      sha256 "20322e55aa4538c0f4a94a6f71c14dbbf170e1a59a61ce2b7de7142ba1ae37f1"
 
       def install
         bin.install "kaf"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/birdayz/kaf/releases/download/v0.1.53/kaf_0.1.53_Linux_x86_64.tar.gz"
-      sha256 "b3650742c3a501abe3d58ed456a85bec2ab4491bd4b95ae0ddf250708ba76c56"
+      url "https://github.com/birdayz/kaf/releases/download/v0.1.54/kaf_0.1.54_Linux_x86_64.tar.gz"
+      sha256 "b607a70ced567b75bcfdaa0350392686ab8a0b47e11a378601f02c506e6ed484"
 
       def install
         bin.install "kaf"

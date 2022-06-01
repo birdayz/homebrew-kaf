@@ -5,20 +5,20 @@
 class Kaf < Formula
   desc ""
   homepage ""
-  version "0.1.47"
+  version "0.2.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/birdayz/kaf/releases/download/v0.1.47/kaf_0.1.47_Darwin_arm64.tar.gz"
-      sha256 "62dff427fb792aac45659c67df85f8e4379ae239e00edd2cf1402888816f744b"
+    if Hardware::CPU.intel?
+      url "https://github.com/birdayz/kaf/releases/download/v0.2.0/kaf_0.2.0_Darwin_x86_64.tar.gz"
+      sha256 "369e190e1bc60a06520a8feab39a2c19c3a3b22c12f73869b2a1668031000bb2"
 
       def install
         bin.install "kaf"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/birdayz/kaf/releases/download/v0.1.47/kaf_0.1.47_Darwin_x86_64.tar.gz"
-      sha256 "3338049c3450bd1c8b48f43b7d8dc438ea73afc1cf13f2e1784ec697d1ced580"
+    if Hardware::CPU.arm?
+      url "https://github.com/birdayz/kaf/releases/download/v0.2.0/kaf_0.2.0_Darwin_arm64.tar.gz"
+      sha256 "3b6b23b6430c7732eb4cebb9ba9dfc2c85dfabc2a2423bf241059e7456190724"
 
       def install
         bin.install "kaf"
@@ -28,16 +28,16 @@ class Kaf < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/birdayz/kaf/releases/download/v0.1.47/kaf_0.1.47_Linux_arm64.tar.gz"
-      sha256 "e3855041cf585aaf36db4b2e7f596ee2bcd3b0d6a498f9185f20bc8aecd4014f"
+      url "https://github.com/birdayz/kaf/releases/download/v0.2.0/kaf_0.2.0_Linux_arm64.tar.gz"
+      sha256 "b02b597444218c0209914240fcdbcff2c8e6c3966ff2068d789f92d3ec552cfe"
 
       def install
         bin.install "kaf"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/birdayz/kaf/releases/download/v0.1.47/kaf_0.1.47_Linux_x86_64.tar.gz"
-      sha256 "2a54ea7f7171621f38219afa1195deaa0710182e9992d03d6a291aaba07c0a12"
+      url "https://github.com/birdayz/kaf/releases/download/v0.2.0/kaf_0.2.0_Linux_x86_64.tar.gz"
+      sha256 "9889345fc76aa104d6588de66bfd011c4cd42d6328485b0f750b8006ed8f2454"
 
       def install
         bin.install "kaf"

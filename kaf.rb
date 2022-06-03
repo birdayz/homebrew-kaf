@@ -5,20 +5,20 @@
 class Kaf < Formula
   desc ""
   homepage ""
-  version "0.2.0"
+  version "0.2.1"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/birdayz/kaf/releases/download/v0.2.0/kaf_0.2.0_Darwin_x86_64.tar.gz"
-      sha256 "369e190e1bc60a06520a8feab39a2c19c3a3b22c12f73869b2a1668031000bb2"
+      url "https://github.com/birdayz/kaf/releases/download/v0.2.1/kaf_0.2.1_Darwin_x86_64.tar.gz"
+      sha256 "22a9bb7230e9473439ffb8c685fc0eadfd8fad087686b7e186afbbdfe4bbbf12"
 
       def install
         bin.install "kaf"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/birdayz/kaf/releases/download/v0.2.0/kaf_0.2.0_Darwin_arm64.tar.gz"
-      sha256 "3b6b23b6430c7732eb4cebb9ba9dfc2c85dfabc2a2423bf241059e7456190724"
+      url "https://github.com/birdayz/kaf/releases/download/v0.2.1/kaf_0.2.1_Darwin_arm64.tar.gz"
+      sha256 "526c1e317afc2991904c29a2bf165b5abb575cf4a548157c898afdbc2d7d1a97"
 
       def install
         bin.install "kaf"
@@ -27,17 +27,17 @@ class Kaf < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/birdayz/kaf/releases/download/v0.2.0/kaf_0.2.0_Linux_arm64.tar.gz"
-      sha256 "b02b597444218c0209914240fcdbcff2c8e6c3966ff2068d789f92d3ec552cfe"
+    if Hardware::CPU.intel?
+      url "https://github.com/birdayz/kaf/releases/download/v0.2.1/kaf_0.2.1_Linux_x86_64.tar.gz"
+      sha256 "6e557c16c4cb7fbfcd763db2bdacef97bef317f768991f6f6bb0f5578be65d48"
 
       def install
         bin.install "kaf"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/birdayz/kaf/releases/download/v0.2.0/kaf_0.2.0_Linux_x86_64.tar.gz"
-      sha256 "9889345fc76aa104d6588de66bfd011c4cd42d6328485b0f750b8006ed8f2454"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/birdayz/kaf/releases/download/v0.2.1/kaf_0.2.1_Linux_arm64.tar.gz"
+      sha256 "e73a4e1cf99c06d2dbc101899146c94944b7de6b1725eb0238e8176165d3ec72"
 
       def install
         bin.install "kaf"

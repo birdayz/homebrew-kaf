@@ -5,20 +5,20 @@
 class Kaf < Formula
   desc ""
   homepage ""
-  version "0.2.3"
+  version "0.2.4"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/birdayz/kaf/releases/download/v0.2.3/kaf_0.2.3_Darwin_arm64.tar.gz"
-      sha256 "130b04740983a7369c1a496efc33fb0d02c4c0503c2aeefc7e8f1a39ab44ac1b"
+    if Hardware::CPU.intel?
+      url "https://github.com/birdayz/kaf/releases/download/v0.2.4/kaf_Darwin_x86_64.tar.gz"
+      sha256 "34a355915a7f32fd7f8b6e3e5de42af5bf0b59985e575d153c55d83eb6bed80f"
 
       def install
         bin.install "kaf"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/birdayz/kaf/releases/download/v0.2.3/kaf_0.2.3_Darwin_x86_64.tar.gz"
-      sha256 "c486e7f9ef47e753b3f5693073152b03e17b4d1e552108749fcc38f805f8ea20"
+    if Hardware::CPU.arm?
+      url "https://github.com/birdayz/kaf/releases/download/v0.2.4/kaf_Darwin_arm64.tar.gz"
+      sha256 "472d15dd8ded03870af0d34042ae41af3f6775c241602e7379a21e12b00661a5"
 
       def install
         bin.install "kaf"
@@ -27,17 +27,17 @@ class Kaf < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/birdayz/kaf/releases/download/v0.2.3/kaf_0.2.3_Linux_x86_64.tar.gz"
-      sha256 "2159bc572288943692895136827978e020d4e342c8ea3af3be11bb2cde2ed185"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/birdayz/kaf/releases/download/v0.2.4/kaf_Linux_arm64.tar.gz"
+      sha256 "2383a7b4ae676482348170a7757518bafa8d242007a3e943814bf9b03ab91786"
 
       def install
         bin.install "kaf"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/birdayz/kaf/releases/download/v0.2.3/kaf_0.2.3_Linux_arm64.tar.gz"
-      sha256 "f2581c0e79a476e0e374a193a470cef5da45e19a3cd6863fcdbcaa9130dd00b0"
+    if Hardware::CPU.intel?
+      url "https://github.com/birdayz/kaf/releases/download/v0.2.4/kaf_Linux_x86_64.tar.gz"
+      sha256 "cb46525ab68cee6970b47f2523657d893ca2c52c1578f88eda231e73ff61a427"
 
       def install
         bin.install "kaf"

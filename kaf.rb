@@ -5,20 +5,20 @@
 class Kaf < Formula
   desc ""
   homepage ""
-  version "0.2.5"
+  version "0.2.6"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/birdayz/kaf/releases/download/v0.2.5/kaf_ 0.2.5_Darwin_x86_64.tar.gz"
-      sha256 "1bc457326539cbbd9c2f838d0b41dfa0709266ddebe9f32b726737c5befdc7e0"
+    if Hardware::CPU.arm?
+      url "https://github.com/birdayz/kaf/releases/download/v0.2.6/kaf_0.2.6_Darwin_arm64.tar.gz"
+      sha256 "6f52c41034ef875172a7a19d027d3eb0ad5c7ddc6e7da5882d11779cbfed9083"
 
       def install
         bin.install "kaf"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/birdayz/kaf/releases/download/v0.2.5/kaf_ 0.2.5_Darwin_arm64.tar.gz"
-      sha256 "0571419f1f848937968858e55a4b5a66e8f68c3a2b95987f3fde9c607a925350"
+    if Hardware::CPU.intel?
+      url "https://github.com/birdayz/kaf/releases/download/v0.2.6/kaf_0.2.6_Darwin_x86_64.tar.gz"
+      sha256 "4f30eac32d5e8818236b5ff1d80573e64439db28c8121891c48f7c94a5b3d1e7"
 
       def install
         bin.install "kaf"
@@ -28,16 +28,16 @@ class Kaf < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/birdayz/kaf/releases/download/v0.2.5/kaf_ 0.2.5_Linux_arm64.tar.gz"
-      sha256 "a28cc4a995922577801e6c69101d73f59fd8704f9d4f831916c4cdb6b8a76042"
+      url "https://github.com/birdayz/kaf/releases/download/v0.2.6/kaf_0.2.6_Linux_arm64.tar.gz"
+      sha256 "e92e3f1961cc597c71d6c1b6b4700ac3ae23788a63d2699b481939993fa749aa"
 
       def install
         bin.install "kaf"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/birdayz/kaf/releases/download/v0.2.5/kaf_ 0.2.5_Linux_x86_64.tar.gz"
-      sha256 "82732852f0e8751f23b7f9408eb29f65f49abc708fe9bb108ea3dad3b6abb3a6"
+      url "https://github.com/birdayz/kaf/releases/download/v0.2.6/kaf_0.2.6_Linux_x86_64.tar.gz"
+      sha256 "e8a5a9729a1905287aa545d5f3fa56e3bf58b716891b3006869cb2fcfe7e57b5"
 
       def install
         bin.install "kaf"

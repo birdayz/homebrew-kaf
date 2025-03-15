@@ -5,20 +5,20 @@
 class Kaf < Formula
   desc ""
   homepage ""
-  version "0.2.8"
+  version "0.2.11"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/birdayz/kaf/releases/download/v0.2.8/kaf_0.2.8_Darwin_arm64.tar.gz"
-      sha256 "9c97ff1fdb4bec4d1a7e8ebbbef6693e76058f7e1ea023b257fde0254338a3dd"
+    if Hardware::CPU.intel?
+      url "https://github.com/birdayz/kaf/releases/download/v0.2.11/kaf_0.2.11_Darwin_x86_64.tar.gz"
+      sha256 "d3a22d6713b4d5c66d09cae9bd26bad4fb6cdd51643effb36aca2d0b455e045a"
 
       def install
         bin.install "kaf"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/birdayz/kaf/releases/download/v0.2.8/kaf_0.2.8_Darwin_x86_64.tar.gz"
-      sha256 "c0a7a12cb8f32be13614adb5a97b28cf2383e5927cd54158dee763a905c3acb2"
+    if Hardware::CPU.arm?
+      url "https://github.com/birdayz/kaf/releases/download/v0.2.11/kaf_0.2.11_Darwin_arm64.tar.gz"
+      sha256 "457ea81d818aecb00dfc4d40690c146d9ad43b4c25f61d054ddbf94b0ab8fc06"
 
       def install
         bin.install "kaf"
@@ -27,20 +27,24 @@ class Kaf < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/birdayz/kaf/releases/download/v0.2.8/kaf_0.2.8_Linux_arm64.tar.gz"
-      sha256 "7cc2f6b0b57360f587be3e74271e9ce9809a6011e8ec93092d7002e93cc02e7e"
+    if Hardware::CPU.intel?
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/birdayz/kaf/releases/download/v0.2.11/kaf_0.2.11_Linux_x86_64.tar.gz"
+        sha256 "1817d95c17e14bf37a51c07282a760477263e7e3a1998bcf4ae54bc8b3816e6b"
 
-      def install
-        bin.install "kaf"
+        def install
+          bin.install "kaf"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/birdayz/kaf/releases/download/v0.2.8/kaf_0.2.8_Linux_x86_64.tar.gz"
-      sha256 "ef8e143674a8fe242d63c62fb4d52adc6461a8b504345a2bf8fb77ff9020a731"
+    if Hardware::CPU.arm?
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/birdayz/kaf/releases/download/v0.2.11/kaf_0.2.11_Linux_arm64.tar.gz"
+        sha256 "c896a9dcce98d202cb7b72e2f2796e426ee91ade2b5a3456047dd1c8f29ca4cc"
 
-      def install
-        bin.install "kaf"
+        def install
+          bin.install "kaf"
+        end
       end
     end
   end

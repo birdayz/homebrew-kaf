@@ -5,46 +5,40 @@
 class Kaf < Formula
   desc ""
   homepage ""
-  version "0.2.13"
+  version "0.2.14"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/birdayz/kaf/releases/download/v0.2.13/kaf_0.2.13_Darwin_x86_64.tar.gz"
-      sha256 "00f243a0c6e025ef43c37bfddc7ddf92cf7351e9fe4b3b166997a48fdf396708"
+      url "https://github.com/birdayz/kaf/releases/download/v0.2.14/kaf_0.2.14_Darwin_x86_64.tar.gz"
+      sha256 "8dd36860fd2ffa1b6c33d016070f1b0a2b211b7752fd1cabc92f8167e1fcfd4f"
 
-      def install
+      define_method(:install) do
         bin.install "kaf"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/birdayz/kaf/releases/download/v0.2.13/kaf_0.2.13_Darwin_arm64.tar.gz"
-      sha256 "726618df5674d3379cf627da03c090e8a00d966d51d2da504d4d7c44efd9443f"
+      url "https://github.com/birdayz/kaf/releases/download/v0.2.14/kaf_0.2.14_Darwin_arm64.tar.gz"
+      sha256 "8fd85282ace277a7bcc86914e2e026018cf168b6f8496b2ded38fc1525caa55c"
 
-      def install
+      define_method(:install) do
         bin.install "kaf"
       end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/birdayz/kaf/releases/download/v0.2.13/kaf_0.2.13_Linux_x86_64.tar.gz"
-        sha256 "c431f4f0af531b714c798779543e307b0824e13e27f6198f720d912405e52a20"
-
-        def install
-          bin.install "kaf"
-        end
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/birdayz/kaf/releases/download/v0.2.14/kaf_0.2.14_Linux_x86_64.tar.gz"
+      sha256 "c2cc6e412d31f979242e3c7ca38f8474402c3722ef0ced22f842fe2a74818889"
+      define_method(:install) do
+        bin.install "kaf"
       end
     end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/birdayz/kaf/releases/download/v0.2.13/kaf_0.2.13_Linux_arm64.tar.gz"
-        sha256 "e6b474a10cee95a3693f7e32c66178cc7ed984907bfa2892dea9428780e58bc7"
-
-        def install
-          bin.install "kaf"
-        end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/birdayz/kaf/releases/download/v0.2.14/kaf_0.2.14_Linux_arm64.tar.gz"
+      sha256 "8bcb6738652088f1b3d59ff4d244f5e5ce5ae0ae29c6e7caa6b255abd828d97d"
+      define_method(:install) do
+        bin.install "kaf"
       end
     end
   end
